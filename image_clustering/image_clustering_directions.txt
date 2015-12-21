@@ -1,0 +1,27 @@
+The image clustering ( that uses gabor and daisy features) requires these 4 lines to be added to the newman.sh file (in newman-vm/provision directory):
+sudo apt-get install python-numpy python-scipy python-matplotlib python-pandas python-sympy python-nose
+sudo pip install scikit-image
+sudo pip install –U scikit-learn
+sudo pip install Pillow
+
+The image clustering algorithm requires 2 python files I provide (image_clustering_gabor_daisy.py and resize_image.py).
+
+Steps for image clustering:
+1.)	Place image_clustering_gabor_daisy.py and resize_image.py in same directory.
+2.)	Make directory (named ‘images_set’) in same directory as image_clustering_gabor_daisy.py file.
+3.)	Place image files of interest in ‘images_set’ directory
+4.)	Run the command listed below
+
+Image clustering command (easy way):
+python image_clustering_gabor_daisy.py --num_clusters NUM_CLUSTERS --num_desired_features NUM_DESIRED_FEATURES --recursive_file_search RECURSIVE_FILE_SEARCH
+(NUM_CLUSTERS are the number of clusters or categories that you would expect the data to naturally fall into. NUM_DESIRED_FEATURES is the dimensionality of the feature space in which you are clustering the data. RECURSIVE_FILE_SEARCH is either ‘true’ or ‘false’ (no quotations). This specifies if there are a number of subdirectories in the ‘images_set’ directory that each contain images with ‘true’ for recursive_file_search, or that all the images are directly contained in ‘images_set’  with ‘false’ for recursive_file_search).
+(Note: as a rule of thumb, make the NUM_CLUSTERS equal to the NUM_DESIRED_FEATURES for good results on average)
+
+
+
+Image clustering command (the full command):
+python image_clustering_gabor_daisy.py --num_clusters NUM_CLUSTERS --num_desired_features NUM_DESIRED_FEATURES --dir_name DIR_NAME --num_rows NUM_ROWS --num_cols NUM_COLS 
+--recursive_file_search RECURSIVE_FILE_SEARCH
+
+
+5.)	Look in ‘images_set’ directory for the cluster folders containing the partitioned image set.
