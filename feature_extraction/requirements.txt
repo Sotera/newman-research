@@ -1,0 +1,6 @@
+numpy
+IPython
+imageio
+scipy
+matplotlib
+NeuroTools
