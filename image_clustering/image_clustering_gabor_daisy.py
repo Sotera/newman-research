@@ -100,8 +100,8 @@ def resize_image_and_get_full_gabor_features(dir_of_file_full_path, filename, nu
     else:
         resized_filename = resize_image.resize_image(dir_of_file_full_path, filename, num_rows, num_cols)
 
-    num_levels = 5
-    num_orientations = 5
+    num_levels = 2
+    num_orientations = 7
     return gabor_features.get_gabor_features(resized_filename, num_levels, num_orientations)
 
 

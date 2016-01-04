@@ -32,7 +32,7 @@ def get_gabor_features(image_file_path, num_levels, num_orientations):
     i = 0
     for i_level in range(num_levels):
         # for theta in np.linspace(0, np.pi, num_orientations, endpoint=False):
-        for theta in np.linspace(0, np.pi, num_orientations):
+        for theta in np.linspace(0, np.pi, num_orientations, endpoint=False):
             params = {'sf_0':1./(2**i_level), 'B_sf':lg.pe.B_sf, 'theta':theta, 'B_theta':lg.pe.B_theta}
             # loggabor takes as args: u, v, sf_0, B_sf, theta, B_theta)
             FT_lg = lg.loggabor(0, 0, **params)
