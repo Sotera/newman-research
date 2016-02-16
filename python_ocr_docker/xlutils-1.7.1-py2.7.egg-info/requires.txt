@@ -1,0 +1,8 @@
+xlrd >= 0.7.2
+xlwt >= 0.7.4
+
+[test]
+manuel
+mock
+testfixtures >= 1.6.1
+errorhandler
