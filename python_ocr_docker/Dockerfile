@@ -1,9 +1,15 @@
-FROM python:2.7
+FROM houqp/py26:0.0.1
+
+# RUN apt-get purge -y libtiff5
+RUN apt-get install -y libjpeg-turbo8 libjbig0 libjpeg8 libtiff5
+
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 #COPY requirements.txt /usr/src/app/
 #RUN pip install --no-cache-dir -r requirements.txt
 COPY . /usr/src/app
+# RUN dpkg -i ./libtiff4_3.9.7-2ubuntu1_amd64.deb
+
 #ENV PATH /usr/src/app
 CMD ["python", "/usr/src/app/transaction_extraction_ocr_deconvolution.py"]
 
