@@ -1,5 +1,5 @@
 FROM houqp/py26:0.0.1
-
+#FROM ubuntu:14.04
 # RUN apt-get purge -y libtiff5
 RUN apt-get install -y libjpeg-turbo8 libjbig0 libjpeg8 libtiff5
 
@@ -26,6 +26,9 @@ RUN sudo apt-get install -qy python-skimage
 RUN sudo pip install numpy
 RUN sudo apt-get install -qy libblas-dev liblapack-dev libatlas-base-dev gfortran
 RUN sudo pip install scipy
+RUN sudo apt-get install tesseract
+
+RUN sudo apt-get install -qy emacs
 
 #ENV PATH /usr/src/app
 CMD ["python", "/usr/src/app/transaction_extraction_ocr_deconvolution.py"]
