@@ -10,6 +10,23 @@ WORKDIR /usr/src/app
 COPY . /usr/src/app
 # RUN dpkg -i ./libtiff4_3.9.7-2ubuntu1_amd64.deb
 
+RUN apt-get install -qy python2.7-dev
+RUN apt-get install -qy libpython-dev
+RUN apt-get install -qy python-dev
+RUN apt-get install -qy libjpeg-dev
+RUN apt-get install -qy libjpeg8-dev
+RUN apt-get install -qy libpng3 
+RUN apt-get install -qy libfreetype6-dev
+RUN ln -s /usr/lib/i386-linux-gnu/libfreetype.so /usr/lib
+RUN ln -s /usr/lib/i386-linux-gnu/libjpeg.so /usr/lib
+RUN ln -s /usr/lib/i386-linux-gnu/libz.so /usr/lib
+RUN sudo pip install Pillow
+
+RUN sudo apt-get install -qy python-skimage
+RUN sudo pip install numpy
+RUN sudo apt-get install -qy libblas-dev liblapack-dev libatlas-base-dev gfortran
+RUN sudo pip install scipy
+
 #ENV PATH /usr/src/app
 CMD ["python", "/usr/src/app/transaction_extraction_ocr_deconvolution.py"]
 
