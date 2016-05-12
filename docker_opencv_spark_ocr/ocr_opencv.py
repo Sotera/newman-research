@@ -10,7 +10,7 @@ import numpy as np
 import cStringIO
 
 from skimage.io import imread
-from skimage import color, data, restoration
+#from skimage import color, data, restoration
 from scipy.signal import convolve2d as conv2
 import codecs
 # from textblob import TextBlob
