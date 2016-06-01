@@ -27,6 +27,8 @@ add	build_opencv.sh	/build_opencv.sh
 run	/bin/sh /build_opencv.sh
 run	rm -rf /build_opencv.sh
 workdir /srv/software/pst-extraction/
+run 	sudo rm -rf /usr/lib/python2.7/dist-packages/PIL
+run	sudo mv /srv/software/pst-extraction/PIL /usr/lib/python2.7/dist-packages/
 #workdir /
 cmd ["spark-submit"]
 
