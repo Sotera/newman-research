@@ -36,8 +36,8 @@ def process_partition(email_iter):
 
 
     # USE SAVED VERSIONS OF MODELS:
-    human_model_fn = 'human_classifier.pkl'
-    receipt_model_fn = 'receipt_classifier.pkl'
+    human_model_fn = 'image-detection/human_classifier.pkl'
+    receipt_model_fn = 'image-detection/receipt_classifier.pkl'
     with open(human_model_fn, 'r') as fid_h:
         human_model = pickle.load(fid_h)
     with open(receipt_model_fn, 'r') as fid_r:
